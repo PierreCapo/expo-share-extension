@@ -10,6 +10,10 @@ tsconfig.tsbuildinfo
 # Xcode
 #
 build/
+# The config plugin's compiled output is committed: git installs (bun, npm)
+# don't run `prepare`, and Expo prebuild loads app.plugin.js -> plugin/build.
+# Rebuild it with `npm run build plugin` whenever plugin/src changes.
+!plugin/build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
